@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import './App.css';
 
 export default function App() {
-  const [markdown, setMarkdown] = useState('Suuppp')
+  const [markdown, setMarkdown] = useState('Start typing...')
 
   function handleChange(e){
       setMarkdown(e.target.value)
@@ -14,6 +14,7 @@ export default function App() {
     <div className="app">
       <textarea 
         value = {markdown}
+        onClick = {(e) => setMarkdown(' ')}
         onChange = {handleChange}
       />
       <ReactMarkdown className='preview' children={markdown} /> 
